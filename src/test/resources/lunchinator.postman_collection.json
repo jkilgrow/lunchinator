@@ -1,0 +1,90 @@
+{
+	"variables": [],
+	"info": {
+		"name": "lunchinator",
+		"_postman_id": "8c8aa772-e3e3-3308-7d25-98d06c94e899",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/api/create-ballot",
+			"request": {
+				"url": "localhost:8080/api/create-ballot",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"endTime\":\"10/20/2017 11:45\",\r\n    \"voters\":\r\n    [\r\n        {\r\n           \"name\":\"Bob\",\r\n           \"emailAddress\": \"bob@gmail.com\"\r\n        },\r\n        {\r\n           \"name\":\"Jim\",\r\n           \"emailAddress\": \"jim@gmail.com\"\r\n        }\r\n    ]\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/ballot/1",
+			"request": {
+				"url": "localhost:8080/api/ballot/1234570",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/vote?id=12345&ballotId=9012345&voterName=Jason&emailAddress=jkilgrow@gmail.com",
+			"request": {
+				"url": {
+					"raw": "localhost:8080/api/vote?id=10&ballotId=1234570&voterName=Bob&emailAddress=bob@gmail.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vote"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "10",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "ballotId",
+							"value": "1234570",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "voterName",
+							"value": "Bob",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "emailAddress",
+							"value": "bob@gmail.com",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
